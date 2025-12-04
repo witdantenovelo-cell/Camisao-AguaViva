@@ -1,0 +1,181 @@
+body {
+margin: 0;
+font-family: 'Poppins', sans-serif;
+background: linear-gradient(to bottom, #004e92, #000428);
+color: #fff;
+overflow-x: hidden;
+}
+header {
+background: rgba(0, 0, 50, 0.8);
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1em 2em;
+position: sticky;
+top: 0;
+backdrop-filter: blur(6px);
+}
+header h1 {
+font-size: 1.6em;
+}
+nav button {
+background: #00bcd4;
+border: none;
+padding: 0.7em 1.2em;
+margin: 0 0.3em;
+border-radius: 8px;
+color: #fff;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s;
+}
+nav button:hover {
+background: #0097a7;
+}
+.intro {
+text-align: center;
+padding: 3em 1em;
+}
+.curiosidades {
+padding: 2em;
+text-align: center;
+}
+.cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1.5em;
+margin-top: 2em;
+}
+.card {
+background: rgba(255, 255, 255, 0.1);
+padding: 1.5em;
+border-radius: 15px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+transition: transform 0.3s, background 0.3s;
+}
+.card:hover {
+transform: scale(1.05);
+background: rgba(0, 188, 212, 0.3);
+}
+footer {
+background: rgba(0, 0, 50, 0.9);
+text-align: center;
+padding: 1em;
+font-size: 0.9em;
+}
+.card img {
+    width: 100%;       /* Todas as imagens ocupam toda a largura do card */
+    height: 200px;     /* Altura fixa para uniformidade */
+    object-fit: cover; /* Corta e ajusta a imagem sem distorcer */
+    border-radius: 12px;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.card img:hover {
+    transform: scale(1.05); /* Leve zoom ao passar o mouse */
+}
+
+/* ===== Modal da Câmera ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 30, 60, 0.7); /* Azul escuro translúcido */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  background: linear-gradient(180deg, rgba(0,120,180,0.95), rgba(0,60,100,0.95));
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  max-width: 720px;
+  width: 92%;
+}
+
+.modal-title {
+  color: #ffffff;
+  margin: 6px 0 12px 0;
+  font-size: 18px;
+}
+
+.video-wrap {
+  width: 100%;
+  display:flex;
+  justify-content:center;
+}
+
+video#video {
+  border-radius: 12px;
+  width: 640px;
+  max-width: 100%;
+  height: auto;
+  background: #000;
+}
+
+.controls {
+  display:flex;
+  gap: 14px;
+  margin-top: 12px;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Botão circular foto */
+.botao-foto {
+  background-color: #00c0e8;
+  border: none;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: #00324a;
+}
+
+/* Botão fechar (canto) */
+.botao-fechar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.06);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* status text */
+.modal-status {
+  color: #e0f7ff;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+df-messenger {
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+df-messenger.aberto {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
